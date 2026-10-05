@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.npm-cache/
+.docker-task/
+.local-postgres/
+.env*
+!.env.example
+.storage/
+*.tsbuildinfo
+test-results/

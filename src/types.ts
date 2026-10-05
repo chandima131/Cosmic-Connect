@@ -1,0 +1,7 @@
+export type Job = { id: string; slug: string; title: string; location: string; description: string; salaryMin: number | null; salaryMax: number | null; salaryText: string | null; salaryVisible: boolean; jobType: string; experienceRequired: string; skills: string[]; responsibilities: string; requirements: string; benefits: string | null; closingDate: string; status: string; createdAt: string; publishedAt: string | null; _count?: { applications: number }; applications?: Application[] };
+export type User = { id: string; name: string; email: string; role: string };
+export type Document = { id: string; cvOriginalName: string; cvMimeType: string; createdAt: string };
+export type Note = { id: string; body: string; createdAt: string; user: { name: string } };
+export type Candidate = { id: string; firstName: string; lastName: string; email: string; phone: string; location: string; currentJobTitle: string; yearsExperience: number; skills: string[]; qualifications: string; linkedinUrl: string | null; applications?: Application[]; documents?: Document[]; notes?: Note[] };
+export type Application = { id: string; reference: string; candidateId: string; candidate: Candidate; job: Job | null; status: string; createdAt: string; consentAt: string; document?: Document; notes?: Note[]; history?: { id: string; fromStatus: string; toStatus: string; createdAt: string; user: { name: string } }[] };
+export type Dashboard = { activeJobs: number; applications: number; newApplications: number; candidates: number; recentApplications: Application[]; recentJobs: Job[] };
